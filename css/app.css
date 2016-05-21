@@ -21,6 +21,7 @@ img{
     padding-top: 3%;
     margin-right:2%;
     margin-left:2%;
+    border-bottom: 3px solid #8BC34A;
 }
 
 @media screen and (max-width: 720px) {
@@ -62,8 +63,8 @@ div.content{
 	margin-top: 5%;
     text-align: justify;
     background: rgba(203, 239, 186, 0.16);
-    padding: 1%;
-    color: #525252;
+    padding: 10px;
+    color: #424242;
     font-size:1em;
 }
 
@@ -76,6 +77,12 @@ div.tech-info{
     float: right;
     margin-top: 3%;
     margin-right: -13%;
+}
+
+div.footer{
+    margin-top: 5%;
+    font-size: .8em;
+    color: #18561A;
 }
 
 /************OVERRIDE ******************/
