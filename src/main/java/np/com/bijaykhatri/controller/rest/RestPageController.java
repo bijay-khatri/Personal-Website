@@ -23,8 +23,6 @@ public class RestPageController {
         return pageService.findAll();
     }
 
-
-
     @RequestMapping(value="/page/{id}", method= RequestMethod.GET)
     public Page getSinglePage(@PathVariable("id") int id){
         return pageService.findById(id);

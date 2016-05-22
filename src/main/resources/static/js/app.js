@@ -6,14 +6,9 @@
 
     app.controller('MainController',['$http',function($http){
         this.tab = 1;
-        this.addFrom = false;
         var self = this;
         this.setTab = function(tab){
             self.tab = tab;
-        }
-
-        this.showAddForm = function(){
-            self.addForm = true;
         }
 
         this.loadPage = function(id){

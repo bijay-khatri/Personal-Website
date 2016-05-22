@@ -44,7 +44,9 @@ public class AdminController {
 
     @RequestMapping(value="/add/{id}",method= RequestMethod.GET)
     public String editPageForm(@PathVariable int id, Model model){
-       model.addAttribute("page",pageService.findById(id));
+       Page page = pageService.findById(id);
+       page.setOperation("Edit");
+       model.addAttribute("page",page);
        return "admin/add_page";
     }
 

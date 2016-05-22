@@ -3,28 +3,31 @@
 <head>
     <title>Bijay Khatri - Personal Site</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/app.css" />
-    <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'/>
+
+    <link th:href="@{https://fonts.googleapis.com/css?family=Varela+Round}" rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" th:href="@{css/app.css}"/>
 </head>
 <body>
 <div class="container" ng-controller="MainController as main" ng-init="main.loadPages()">
     <div class="admin-content row">
         <h4>Available Pages</h4>
-        <a th:href="@{/admin/add}">Add</a>
+        <a th:href="@{/admin/add}" class="btn btn-success">Add</a>
         <table class="table table-striped">
             <tr>
                 <th>S.No</th>
                 <th>title</th>
                 <th>Body</th>
                 <th>Created On</th>
+                <th>Page Order</th>
                 <th>Active</th>
                 <th>Operation</th>
             </tr>
             <tr ng-repeat="page in main.pages">
                 <td>{{$index+1}}</td>
                 <td>{{page.title}}</td>
-                <td>{{page.body}}</td>
+                <td>{{page.body | limitTo : 50}}</td>
                 <td>{{page.createdDate | date :"yyyy-MM-dd HH:mm:ss"}}</td>
+                <td>{{page.pageOrder}}</td>
                 <td>{{page.active}}</td>
                 <td>
                     <a href="admin/add/{{page.id}}">Edit</a> |
@@ -32,15 +35,15 @@
                 </td>
             </tr>
             <!--<tr th:each="page,iterationStatus:${pages}">-->
-                <!--<td th:text="${iterationStatus.count}"></td>-->
-                <!--<td th:text="${page.title}"></td>-->
-                <!--<td th:text="${page.body}"></td>-->
-                <!--<td th:text="${page.createdDate}"></td>-->
-                <!--<td th:text="${page.active}"></td>-->
-                <!--<td>-->
-                    <!--<a th:href="@{admin/add/{id}(id=${page.id})}">Edit</a>|-->
+            <!--<td th:text="${iterationStatus.count}"></td>-->
+            <!--<td th:text="${page.title}"></td>-->
+            <!--<td th:text="${page.body}"></td>-->
+            <!--<td th:text="${page.createdDate}"></td>-->
+            <!--<td th:text="${page.active}"></td>-->
+            <!--<td>-->
+            <!--<a th:href="@{admin/add/{id}(id=${page.id})}">Edit</a>|-->
 
-                    <!--<a th:href="@{admin/delete/{id}(id=${page.id})}">Delete</a> </td>-->
+            <!--<a th:href="@{admin/delete/{id}(id=${page.id})}">Delete</a> </td>-->
             <!--</tr>-->
         </table>
     </div>
@@ -48,6 +51,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
-<script src="js/app.js"></script>
+<script th:src="@{js/app.js}"></script>
 </body>
 </html>

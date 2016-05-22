@@ -1,20 +1,34 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Bijay Khatri - Personal Site</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/app.css" />
-    <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'/>
-</head>
+    <head>
+        <title>Bijay Khatri - Personal Site</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous" />
+        <link rel="stylesheet" th:href="@{css/app.css}" />
+        <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'/>
+    </head>
 <body>
-<h3><span th:text="${message}"></span> </h3>
-<h4>Add Page</h4>
-<form action="#" th:action="@{/admin/add}" th:object="${page}" method="post">
-    <p>Titel: <input type="text" th:field="*{title}" /></p>
-    <p>Body: <input type="text" th:field="*{body}" /></p>
-    <p>Order: <input type="text" th:field="*{pageOrder}"/></p>
-    <input type="hidden" th:field="*{id}"/>
-    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-</form>
+<div class="container">
+    <div class="row">
+        <h3><span th:text="${message}"></span> </h3>
+        <h4><span th:text="${page.operation}"></span> Page</h4>
+        <form action="#" th:action="@{/admin/add}" th:object="${page}" method="post">
+            <fieldset class="form-group">
+                <label for="title">Title</label>
+                <input type="text" th:field="*{title}" class="form-control" id="title" placeholder="Title"/>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="body">Body</label>
+                <textarea type="text" th:field="*{body}" class="form-control" id="body" placeholder="Body"></textarea>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="order">Page Order</label>
+                <input type="text" th:field="*{pageOrder}" class="form-control" id="order"/>
+            </fieldset>
+            <input type="hidden" th:field="*{id}"/>
+            <button type="submit" class="btn btn-success">Add</button>
+        </form>
+    </div>
+</div>
+
 </body>
 </html>

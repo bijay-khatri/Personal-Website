@@ -81,6 +81,17 @@ public class Page {
         this.body = body;
     }
 
+    @Transient
+    private String operation = "Add";
+
+    public String getOperation() {
+        return operation;
+    }
+
+    public void setOperation(String operation) {
+        this.operation = operation;
+    }
+
     @Override
     public String toString() {
         return super.toString();
