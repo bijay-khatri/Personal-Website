@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c0a9e0d-a095-4dcd-85f9-dd83e710d0fd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/np/com/bijaykhatri/controller/AdminController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/np/com/bijaykhatri/controller/rest/RestPageController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/add_page.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/list_page.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/np/com/bijaykhatri/controller/HomeController.class" afterPath="$PROJECT_DIR$/target/classes/np/com/bijaykhatri/controller/HomeController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/np/com/bijaykhatri/domain/Page.class" afterPath="$PROJECT_DIR$/target/classes/np/com/bijaykhatri/domain/Page.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/com/bijaykhatri/controller/HomeController.java" afterPath="$PROJECT_DIR$/src/main/java/np/com/bijaykhatri/controller/HomeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/com/bijaykhatri/domain/Page.java" afterPath="$PROJECT_DIR$/src/main/java/np/com/bijaykhatri/domain/Page.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/com/bijaykhatri/repository/PageRepository.java" afterPath="$PROJECT_DIR$/src/main/java/np/com/bijaykhatri/repository/PageRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/com/bijaykhatri/service/PageService.java" afterPath="$PROJECT_DIR$/src/main/java/np/com/bijaykhatri/service/PageService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/np/com/bijaykhatri/service/impl/PageServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/np/com/bijaykhatri/service/impl/PageServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/css/app.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/js/app.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/pages.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/pages.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/css/app.css" afterPath="$PROJECT_DIR$/target/classes/static/css/app.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/js/app.js" afterPath="$PROJECT_DIR$/target/classes/static/js/app.js" />
@@ -1032,7 +1018,7 @@
       <option name="presentableId" value="Default" />
       <updated>1463861919993</updated>
       <workItem from="1463861926632" duration="8558000" />
-      <workItem from="1463885923689" duration="16455000" />
+      <workItem from="1463885923689" duration="16613000" />
     </task>
     <task id="LOCAL-00001" summary="Added Pages thymleaf">
       <created>1463871692178</created>
@@ -1041,11 +1027,18 @@
       <option name="project" value="LOCAL" />
       <updated>1463871692178</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added Angular Crud to Pages with Spring Boot">
+      <created>1463903390181</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1463903390181</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25013000" />
+    <option name="totallyTimeSpent" value="25171000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1093,7 +1086,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Pages thymleaf" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Pages thymleaf" />
+    <MESSAGE value="Added Angular Crud to Pages with Spring Boot" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Angular Crud to Pages with Spring Boot" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
