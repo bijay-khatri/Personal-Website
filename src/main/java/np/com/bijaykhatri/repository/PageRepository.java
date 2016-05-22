@@ -11,4 +11,9 @@ import java.util.List;
 public interface PageRepository extends JpaRepository<Page,Integer>{
 
     public List<Page> findAll();
+    public List<Page> findAllByOrderByPageOrderDesc();
+
+    Page findById(int id);
+
+    public Page save(Page page);
 }

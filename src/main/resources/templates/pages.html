@@ -5,6 +5,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<p th:text="'Hello, ' + ${pages} + '!'" />
+    <ul>
+        <li th:each="page,iterationStatus:${pages}">
+            <label th:text="${page.title}"/>
+        </li>
+    </ul>
 </body>
 </html>

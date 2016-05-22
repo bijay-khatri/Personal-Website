@@ -17,6 +17,23 @@ public class PageServiceImpl implements PageService {
     @Autowired private PageRepository pageRepository;
     @Override
     public List<Page> findAll() {
-        return pageRepository.findAll();
+        return pageRepository.findAllByOrderByPageOrderDesc();
     }
+
+    @Override
+    public Page save(Page page) {
+        return pageRepository.save(page);
+    }
+
+    @Override
+    public Page findById(int id) {
+        return pageRepository.findById(id);
+    }
+
+    @Override
+    public void delete(int id) {
+         pageRepository.delete(id);
+    }
+
+
 }

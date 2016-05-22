@@ -10,4 +10,11 @@ import java.util.List;
 
 public interface PageService {
     List<Page> findAll();
+
+    Page save(Page page);
+
+    Page findById(int id);
+
+
+    void delete(int id);
 }

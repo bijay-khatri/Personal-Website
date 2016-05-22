@@ -1,9 +1,10 @@
 package np.com.bijaykhatri.controller;
 
+import np.com.bijaykhatri.service.PageService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * Created by Bijay on 5/21/2016.
@@ -11,9 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HomeController {
 
+    @Autowired private PageService pageService;
     @RequestMapping("/")
-    public String index(@RequestParam(value="name", required = false, defaultValue = "Bijay") String name, Model model){
-        model.addAttribute("name","Bijay Khatri");
+    public String index(Model model){
+        model.addAttribute("pages", pageService.findAll());
         return "index";
 
     }

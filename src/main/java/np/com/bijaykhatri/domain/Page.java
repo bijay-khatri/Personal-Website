@@ -1,6 +1,7 @@
 package np.com.bijaykhatri.domain;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by Bijay on 5/21/2016.
@@ -14,6 +15,38 @@ public class Page {
     private String title;
     @Column(name="body", columnDefinition="TEXT")
     private String body;
+
+    private boolean active = true;
+
+    private int pageOrder;
+
+    public int getPageOrder() {
+        return pageOrder;
+    }
+
+    public void setPageOrder(int pageOrder) {
+        this.pageOrder = pageOrder;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    @Column(name = "created_date", columnDefinition="DATETIME")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdDate;
 
     public Page() {
 
