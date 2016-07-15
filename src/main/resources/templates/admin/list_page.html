@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" ng-app="personalApp">
-<head>
-    <title>Bijay Khatri - Personal Site</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous" />
-
-    <link th:href="@{https://fonts.googleapis.com/css?family=Varela+Round}" rel='stylesheet' type='text/css'/>
-    <link rel="stylesheet" th:href="@{css/app.css}"/>
-</head>
+<head th:replace="/fragments/header::header"/>
 <body>
-<div class="container" ng-controller="MainController as main" ng-init="main.loadPages()">
+<div class="container" ng-controller="MainController as main"
+     data-th-attr="data-ng-init='main.init(\''+ ${@environment.getProperty('app.baseurl')} +'\');'">
     <div class="admin-content row">
         <h4>Available Pages</h4>
         <a th:href="@{/admin/add}" class="btn btn-success">Add</a>
@@ -34,23 +29,9 @@
                     <a href="#" ng-click="main.deletePage(page.id)">Delete</a>
                 </td>
             </tr>
-            <!--<tr th:each="page,iterationStatus:${pages}">-->
-            <!--<td th:text="${iterationStatus.count}"></td>-->
-            <!--<td th:text="${page.title}"></td>-->
-            <!--<td th:text="${page.body}"></td>-->
-            <!--<td th:text="${page.createdDate}"></td>-->
-            <!--<td th:text="${page.active}"></td>-->
-            <!--<td>-->
-            <!--<a th:href="@{admin/add/{id}(id=${page.id})}">Edit</a>|-->
-
-            <!--<a th:href="@{admin/delete/{id}(id=${page.id})}">Delete</a> </td>-->
-            <!--</tr>-->
         </table>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
-<script th:src="@{js/app.js}"></script>
+<section th:replace="/fragments/footer::footer"/>
 </body>
 </html>

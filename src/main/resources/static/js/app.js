@@ -3,30 +3,42 @@
  */
 (function(){
     var app = angular.module('personalApp',[]);
-
     app.controller('MainController',['$http',function($http){
-        this.tab = 1;
+        var tab = 1;
         var self = this;
+
+        //set the baseurl
+        var url;
+
+        /*set the base url on page load */
+        this.init = function(baseurl){
+            self.url = baseurl;
+            self.loadPage(1);
+            self.loadPages();
+        }
+
         this.setTab = function(tab){
             self.tab = tab;
         }
 
+
+
         this.loadPage = function(id){
-            $http.get("http://localhost:8080/page/" + id)
+            $http.get(self.url + "page/" + id)
                 .success(function(data) {
                     self.page = data;
                 });
         };
 
         this.loadPages = function(){
-            $http.get("http://localhost:8080/page/all")
+            $http.get(self.url + "page/all")
                 .success(function(data) {
                     self.pages = data;
                 });
         }
 
         this.deletePage = function(id){
-            $http.delete("http://localhost:8080/page/delete/"+id).success(function(){
+            $http.delete(self.url + "page/delete/"+id).success(function(){
                 self.loadPages(); //refresh after deletion
             });
         }
